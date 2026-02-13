@@ -1,0 +1,181 @@
+/* ---------- GLOBAL ---------- */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ---------- HEADER ---------- */
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* ---------- MOOD BUTTONS ---------- */
+
+.moodBar {
+  margin-bottom: 20px;
+}
+
+.moodBar button {
+  margin-right: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+}
+
+.moodBar button:hover {
+  background: #9333ea;
+}
+
+/* ---------- GRID LAYOUT (FULL WIDTH FIX) ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 movies per row */
+  gap: 20px;
+  width: 100%;
+}
+
+/* ---------- MOVIE CARD ---------- */
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111827;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+/* Overlay title */
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.overlay h3 {
+  margin: 0;
+}
+
+/* ---------- MOVIE DETAILS ---------- */
+
+.details {
+  width: 100%;
+}
+
+.detailsCard {
+  display: flex;
+  gap: 30px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.detailsCard img {
+  width: 260px;
+  border-radius: 10px;
+}
+
+.detailsText {
+  flex: 1;
+}
+
+.detailsText p {
+  margin: 10px 0;
+}
+
+.backBtn {
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  background: #374151;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.playBtn {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background: #9333ea;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .detailsCard {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popupBox {
+  background: #0f172a;
+  border-radius: 12px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 700px;
+  max-width: 90%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.popupBox img {
+  width: 220px;
+  border-radius: 8px;
+}
